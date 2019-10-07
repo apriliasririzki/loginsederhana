@@ -7,26 +7,9 @@ class model_login extends CI_Model {
 	{
 		$this->db->where('username',$username);
 		$this->db->where('password',$password);
-		$query=$this->db->get('login');
-		if ($query->num_rows()>0){
-			foreach ($query->result() as $row) {
-				$sess = array ('username' => $row->username,
-								'password'=> $row->password
-			);
-			}
-		$this->session->get_userdata($sess);
-		redirect('welcome');
-		}
-		else{
-			$this->session->set_flashdata('info','Maaf username dan password anda salah!');
-			redirect('login');
-		}
+		return $this->db->get('login');
 	}
 	public function keamanan(){
-		$username=$this->session->userdata('username');
-		if(!empty($username)){
-			$this->session->sess_destroy();
-			redirect('login');
-		}
+		
 	}
 }
