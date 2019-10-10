@@ -14,6 +14,7 @@
 <div class = "container">
     <div class="wrapper">
         <form action="<?php echo site_url('login/ceklogin')?>" method="post" name="Login_Form" class="form-signin">       
+          <center><img src="<?= base_url() ?>images/logopadi.png" height="100" width="100"></center>
             <h3 class="form-signin-heading">Selamat Datang</h3>
               <hr class="colorgraph"><br>
 
@@ -23,11 +24,11 @@
                     echo $info;
                 }
               ?>
-              
+              <center>
               <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" autocomplete="off" />
-              <input type="password" class="form-control" name="password" placeholder="Password" required=""/>            
+              <input type="password" class="form-control" name="password" placeholder="Password" required=""/><br>           
              
-              <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>            
+              <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button></center>            
         </form>         
     </div>
 </div>
